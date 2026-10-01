@@ -1,11 +1,13 @@
 # FORESIGHT — AI-Powered Demand & Inventory Intelligence Platform
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://foresight-ai-powered-demand-inventory-intelligence-platform.streamlit.app)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
 [![Code style](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Tests](https://img.shields.io/badge/tests-121%20passed-brightgreen.svg)]()
 [![WAPE Reduction](https://img.shields.io/badge/WAPE%20Reduction-18.39%25-success.svg)]()
 
+> 🌐 **Live Interactive Application:** [**Launch Streamlit Platform**](https://foresight-ai-powered-demand-inventory-intelligence-platform.streamlit.app)  
 > **Client:** NorthBay Living  
 > **Scale:** 5,000 SKUs across 12 merchandise categories, 30 multi-channel retail stores in Pakistan, 9.95M sales transactions (801 MB).  
 > **Primary Objective:** Build an audit-defensible, end-to-end SKU-level demand forecasting and inventory-risk intelligence platform that beats seasonal-naive baselines, quantifies working capital impact in rupees, and provides real-time decision tools for operations and finance leadership.
@@ -121,8 +123,8 @@ FORESIGHT/
 
 ```bash
 # 1. Clone repository and navigate to root
-git clone https://github.com/<your-username>/foresight.git
-cd foresight
+git clone https://github.com/ADITYA-tp01/FORESIGHT-AI-Powered-Demand-Inventory-Intelligence-Platform.git
+cd FORESIGHT-AI-Powered-Demand-Inventory-Intelligence-Platform
 
 # 2. Create and activate virtual environment
 python -m venv .venv
@@ -173,7 +175,10 @@ python -m foresight.pipeline --phase 5
 
 ## Interactive Decision Dashboard (Streamlit)
 
-Launch the interactive operations planning application:
+> 🔗 **Live Cloud Deployment:** Experience the production dashboard online without local installation:  
+> 👉 [**foresight-ai-powered-demand-inventory-intelligence-platform.streamlit.app**](https://foresight-ai-powered-demand-inventory-intelligence-platform.streamlit.app)
+
+Launch the application locally:
 ```bash
 streamlit run app/streamlit_app.py
 # Or using Makefile shortcut:
