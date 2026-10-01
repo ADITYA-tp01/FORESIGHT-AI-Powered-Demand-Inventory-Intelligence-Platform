@@ -212,14 +212,16 @@ make api
 
 ## Deliverables & Documentation Index
 
-All primary project deliverables are published in `reports/` and `notebooks/`:
+All primary project deliverables and publications are indexed below:
+- **Comprehensive Technical & Business Report:** [`docs/PROJECT_REPORT.md`](docs/PROJECT_REPORT.md) & [📥 **Download Word Doc (`.docx`)**](docs/PROJECT_REPORT.docx)
 - **Deliverable D1 (Data Pipeline Audit):** [`reports/data_quality_report.md`](reports/data_quality_report.md) & [`notebooks/01_data_audit.ipynb`](notebooks/01_data_audit.ipynb)
 - **Deliverable D2 (EDA & Baseline Benchmark):** [`reports/eda_report.md`](reports/eda_report.md), [`reports/baseline_scorecard.md`](reports/baseline_scorecard.md) & [`notebooks/02_eda.ipynb`](notebooks/02_eda.ipynb)
 - **Deliverable D3 (Forecasting Engine Evaluation):** [`reports/model_evaluation.md`](reports/model_evaluation.md) & [`notebooks/04_forecasting.ipynb`](notebooks/04_forecasting.ipynb)
 - **Deliverable D4 (Inventory Risk Intelligence):** [`reports/risk_evaluation.md`](reports/risk_evaluation.md) & [`notebooks/05_risk_analysis.ipynb`](notebooks/05_risk_analysis.ipynb)
 - **Deliverable D5 (Planning Dashboard):** Streamlit application in [`app/`](app/)
 - **Deliverable D6 (Scoring Service):** FastAPI microservice in [`api/`](api/)
-- **Deliverable D7 (Executive Readout):** 10-slide executive readout in [`reports/executive_readout.md`](reports/executive_readout.md) & [`notebooks/06_results_consolidation.ipynb`](notebooks/06_results_consolidation.ipynb)
+- **Deliverable D7 (Executive Readout):** 10-slide executive presentation in [`reports/executive_readout.md`](reports/executive_readout.md) & [`notebooks/06_results_consolidation.ipynb`](notebooks/06_results_consolidation.ipynb)
+- **Master Implementation Plan:** [`docs/Plan.md`](docs/Plan.md)
 
 ---
 
