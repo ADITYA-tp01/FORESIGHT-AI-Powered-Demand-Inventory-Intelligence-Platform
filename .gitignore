@@ -50,6 +50,7 @@ artifacts/metrics/*
 !artifacts/metrics/.gitkeep
 artifacts/risk/*
 !artifacts/risk/.gitkeep
+!artifacts/risk/*.parquet
 # Serving layer (~3.3 MB) enables zero-setup instant demo for Streamlit & FastAPI
 !artifacts/serving/**
 !artifacts/serving/.gitkeep
