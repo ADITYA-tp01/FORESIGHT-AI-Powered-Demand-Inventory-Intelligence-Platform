@@ -1,0 +1,54 @@
+system:
+  project_name: "Project FORESIGHT"
+  version: "1.0.0"
+  seed: 42
+  environment: "development"
+  log_level: "INFO"
+  # Sales CSV is 801,086,326 bytes (~763.98 MiB). Never load un-chunked.
+  sales_file_bytes: 801086326
+  sales_file_mib: 763.98
+
+paths:
+  # Dataset lives as a sibling of this project folder (Zidio/Dataset).
+  # Override with FORESIGHT_DATASET_ROOT or configs at runtime.
+  dataset_root: "../Dataset"
+  raw_sales: "retail_contaminated_dataset/sales_transactions.csv"
+  raw_sku: "retail_contaminated_dataset/sku_master.csv"
+  raw_store: "retail_contaminated_dataset/store_master.csv"
+  raw_customer: "retail_contaminated_dataset/customer_master.csv"
+  raw_inventory: "retail_contaminated_dataset/inventory_snapshot.csv"
+  raw_promotions: "retail_contaminated_dataset/promotions.csv"
+  raw_flags: "retail_contaminated_dataset/sku_inventory_flags.csv"
+  clean_sales_control: "retail_clean_dataset/sales_transactions.csv"
+  clean_inventory_control: "retail_clean_dataset/inventory_snapshot.csv"
+  processed_dir: "data/processed"
+  interim_dir: "data/interim"
+  artifacts_dir: "artifacts"
+  reports_dir: "reports"
+  configs_dir: "configs"
+
+ingestion:
+  chunk_size: 500000
+  parquet_compression: "snappy"
+  max_peak_ram_mb: 500
+  deduplication_policy: "retain_multiscan"
+
+audit_expectations:
+  n_skus: 5000
+  n_stores: 30
+  n_customers: 10000
+  n_promotions: 100
+  n_flags: 600
+  n_sales_contaminated: 9945511
+  n_sales_clean: 9972038
+  n_inventory_contaminated: 26408
+
+dashboard:
+  # Streamlit planning app (docs/Plan.md 7.1): pre-aggregated serving + caching.
+  cache_ttl_seconds: 3600     # @st.cache_data(ttl=...) on every loader
+  max_explorer_skus: 10       # Forecast Explorer multi-select cap
+  trajectory_history_weeks: 52  # Portfolio demand trajectory window (Page 1)
+
+api:
+  # FastAPI scoring service (docs/Plan.md 8.2).
+  max_batch_skus: 100        # POST /batch/risk payload cap

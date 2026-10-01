@@ -1,0 +1,35 @@
+horizon_weeks: 8
+model:
+  backend: "hist_gradient_boosting"  # sklearn default; lightgbm optional
+  loss: "absolute_error"             # aligns with WAPE / MAE
+  random_state: 42
+  max_depth: 8
+  learning_rate: 0.08
+  max_iter: 400
+  # sklearn's internal early-stopping split shuffles (test_size=0.1) which
+  # violates Rule 5 (no random splits). Keep it off; CV is rolling-origin.
+  early_stopping: false
+  categorical_features: ["category_code", "subcategory_code", "brand_code"]
+  quantiles: [0.10, 0.90]            # 80% prediction interval
+
+execution_modes:
+  evaluation_cutoff:
+    train_end_date: "2025-10-12"
+    test_start_date: "2025-10-13"
+    test_end_date: "2025-12-31"
+    evaluate_ground_truth: true
+  production_forward:
+    train_end_date: "2025-12-31"
+    forecast_horizon_weeks: 8
+    evaluate_ground_truth: false
+
+cv:
+  folds:
+    - { train_end_week: 157, valid_weeks: 8 }
+    - { train_end_week: 173, valid_weeks: 8 }
+    - { train_end_week: 197, valid_weeks: 12 }  # primary gate: weeks 42–52 2025
+  shuffle: false
+
+metrics:
+  primary: "wape"
+  secondary: ["bias", "mae", "rmse"]

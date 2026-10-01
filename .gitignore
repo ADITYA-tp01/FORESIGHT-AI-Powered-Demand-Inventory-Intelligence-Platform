@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data lake (keep directory structure via .gitkeep)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/interim/*
+!data/interim/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/external/*
+!data/external/.gitkeep
+!data/external/pakistan_holidays.py
+
+# Artifacts (large model binaries ignored, lightweight serving cache tracked)
+artifacts/models/*
+!artifacts/models/.gitkeep
+artifacts/forecasts/*
+!artifacts/forecasts/.gitkeep
+artifacts/metrics/*
+!artifacts/metrics/.gitkeep
+artifacts/risk/*
+!artifacts/risk/.gitkeep
+# Serving layer (~3.3 MB) enables zero-setup instant demo for Streamlit & FastAPI
+!artifacts/serving/**
+!artifacts/serving/.gitkeep
+
+# Never commit the 764–801 MB sales dumps
+*.csv
+!configs/**
+Dataset/
+
+# IDE
+.idea/
+.vscode/
+*.swp

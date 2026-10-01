@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-09-30T19:58:04.989191+00:00",
+  "files": {
+    "dashboard_kpis.parquet": {
+      "rows": 118,
+      "bytes": 4030
+    },
+    "decision_grid.parquet": {
+      "rows": 5000,
+      "bytes": 567293
+    },
+    "forecast_summary.parquet": {
+      "rows": 40000,
+      "bytes": 1291595
+    },
+    "history_weekly.parquet": {
+      "rows": 2520,
+      "bytes": 15250
+    },
+    "promo_windows.parquet": {
+      "rows": 240089,
+      "bytes": 175199
+    }
+  },
+  "history_partitions": {
+    "Apparel & Footwear": "history/Apparel_Footwear.parquet",
+    "Beverages": "history/Beverages.parquet",
+    "Dairy & Bakery": "history/Dairy_Bakery.parquet",
+    "Electronics & Accessories": "history/Electronics_Accessories.parquet",
+    "Frozen Foods": "history/Frozen_Foods.parquet",
+    "Grocery": "history/Grocery.parquet",
+    "Health & Wellness": "history/Health_Wellness.parquet",
+    "Home & Kitchen": "history/Home_Kitchen.parquet",
+    "Home Care": "history/Home_Care.parquet",
+    "Personal Care": "history/Personal_Care.parquet",
+    "Snacks & Confectionery": "history/Snacks_Confectionery.parquet",
+    "Stationery & Office": "history/Stationery_Office.parquet"
+  },
+  "forecast_weeks": [
+    "2026-W02",
+    "2026-W09"
+  ],
+  "active_skus": 5000,
+  "scored_skus": 4495
+}

@@ -1,0 +1,25 @@
+lags:
+  units_sold: [1, 2, 4, 8, 13, 26, 52]
+
+rolling:
+  windows_weeks: [4, 8, 12]
+  stats: ["mean", "std", "min", "max"]
+  zero_sales_window: 8
+
+calendar:
+  fourier_week_period: 52
+  fourier_month_period: 12
+  holiday_proximity_days: 3
+
+promo:
+  active_min_days_in_week: 3
+  overlap_precedence: "highest_discount"
+  promo_types: ["BOGO", "Bundle Offer", "Clearance", "Flat Discount", "Percentage Discount"]
+  target_levels: ["All", "Brand", "Category", "SKU"]
+
+leakage:
+  forbidden_sources:
+    - "sku_inventory_flags.csv"
+    - "future_actual_demand"
+    - "future_inventory_positions"
+    - "clean_sales_during_contaminated_eval"

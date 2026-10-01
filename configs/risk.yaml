@@ -1,0 +1,36 @@
+inventory_defaults:
+  # Category names match sku_master.csv exactly (audited extract).
+  # Electronics is "Electronics & Accessories" (not "Electronics & Electrical").
+  lead_time_days:
+    "Dairy & Bakery": 4
+    "Frozen Foods": 5
+    "Beverages": 7
+    "Snacks & Confectionery": 7
+    "Grocery": 7
+    "Personal Care": 10
+    "Home Care": 10
+    "Health & Wellness": 10
+    "Stationery & Office": 14
+    "Apparel & Footwear": 14
+    "Home & Kitchen": 14
+    "Electronics & Accessories": 21
+  on_order_units_default: 0
+  service_level_z_score: 1.645  # 95% service level
+  overstock_wos_weeks: 12
+  overstock_reorder_multiple: 3  # SOH > 3 x reorder_point also counts as overstock (plan 6.2)
+  healthy_wos_min: 4
+  healthy_wos_max: 8
+  reorder_wos_weeks: 3
+  restock_stale_days: 180        # stale restock: markdown / slow-mover signal (plan 6.3)
+  store_share_window_weeks: 12   # trailing window for store sales shares (plan 6.1)
+  epsilon: 1.0e-9                # division guards in risk formulas (plan 6.2)
+
+quadrants:
+  reorder_now: "High stockout, low overstock — raise PO immediately"
+  watch_volatile: "High stockout and high overstock — review replenishment rule"
+  healthy: "Optimal cover — no operational change"
+  markdown_clear: "Low stockout, high overstock — promote or discount"
+
+evaluation:
+  flags_path_key: "raw_flags"
+  target_stockout_recall: 0.85  # goal, not a guaranteed outcome
